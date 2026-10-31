@@ -1,0 +1,32 @@
+# ==============================================================
+# Sample Packet Analyzer Rules Configuration
+# Used with: java -jar packet-analyzer.jar <in> <out> --rules sample_rules.txt
+# ==============================================================
+
+[BLOCKED_IPS]
+# Block traffic originating from specific suspect IPv4 hosts
+192.168.1.100
+10.0.0.50
+
+[BLOCKED_APPS]
+# Block identified applications (case-insensitive enum matching)
+# Options: Google, YouTube, Facebook, Instagram, Twitter, Netflix,
+#          Amazon, Microsoft, Apple, WhatsApp, Telegram, TikTok,
+#          Spotify, Zoom, Discord, GitHub, Cloudflare
+YouTube
+TikTok
+Netflix
+
+[BLOCKED_DOMAINS]
+# Exact domains and wildcard subdomain patterns
+*.doubleclick.net
+*.facebook.com
+*.tiktokcdn.com
+analytics.google.com
+
+[BLOCKED_PORTS]
+# Prohibit traffic destined to insecure or unwanted service ports
+23
+445
+3389
+
